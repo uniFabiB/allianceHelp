@@ -11,7 +11,7 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
       - can also run just `ddt` and then use the gui
 - [https://helpwiki.sharcnet.ca/wiki/Online_Seminars](Resources for this)
 - [SSH Help](#SSH)
-- [File Managment Help](<#File Management>)
+- [File Managment Help](<#file-management>)
 - [Visual Studio Code (IDE) Help](<Visual Studio Code>)
 - [Compiling Locally](<Compiling Locally>)
 
