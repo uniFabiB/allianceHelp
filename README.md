@@ -12,8 +12,8 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 - [https://helpwiki.sharcnet.ca/wiki/Online_Seminars](Resources for this)
 - [SSH Help](#SSH)
 - [File Managment Help](<#file-management>)
-- [Visual Studio Code (IDE) Help](<Visual Studio Code>)
-- [Compiling Locally](<Compiling Locally>)
+- [Visual Studio Code (IDE) Help](<#visual-studio-code>)
+- [Compiling Locally](<#compiling-locally>)
 
 ## SSH
 - general syntax `ssh -Y username@graham.alliancecan.ca`
@@ -60,9 +60,9 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
         - make a local folder which you would like to use for this (say `~/grahamFolder/`)
         - `sshfs username@graham.alliancecan.ca:/home/username/path/to/folder/which/it/should/be ~/grahamFolder/`
     - I think this is the **most user friendly version** togehter with ide
-  - Method [IDE](<Visual Studio Code>)
+  - Method [IDE](<#visual-studio-code>)
     - handle the files in the ide
-    - therefore you need to setup the ide, see [below](<Visual Studio Code>)
+    - therefore you need to setup the ide, see [below](<#visual-studio-code>)
     - I think this is also really **user friendly version** togehter with sshfs
   - Method [scp](https://www.geeksforgeeks.org/scp-command-in-linux-with-examples/)
     - simply copies the file
