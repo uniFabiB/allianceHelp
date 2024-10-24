@@ -1,8 +1,17 @@
 # Help for Using the Alliance Clusters
 Help for debugging/ssh/development on the Digital Research Alliance of Canada Clusters
 
-## Overview
-- Debugging with few Resources on Login Nodes is fine &rarr; Debug/Develop on Login Nodes
+## Content
+- [Useful Information](<#useful-information>)
+- [SSH Help](#SSH)
+- [File Managment Help](<#file-management>)
+- [Visual Studio Code (IDE) Help](<#visual-studio-code>)
+- [Compiling Locally](<#compiling-locally>)
+
+
+## Useful Information
+- 2FA can be simplified (see [SSH Help](#SSH))
+- Debugging with few Resources on Login Nodes is fine
   - Narval doesn't have cpu or time limit for login nodes
 - [DDT](https://www.youtube.com/watch?v=t5eNtewYgJw) can be used to parallal debug
   - `ssh -Y username@graham.alliancecan.ca` (note that `-Y` (x11 Forwarding) clashes with the ControlMaster [see here](https://github.com/gravitational/teleport/issues/38238))
@@ -10,12 +19,7 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     - `ddt program`
       - can also run just `ddt` and then use the gui
 - Resources for this can be found on the [sharcnet wiki online seminar page](https://helpwiki.sharcnet.ca/wiki/Online_Seminars)
-## Content
-- [SSH Help](#SSH)
-- [File Managment Help](<#file-management>)
-- [Visual Studio Code (IDE) Help](<#visual-studio-code>)
-- [Compiling Locally](<#compiling-locally>)
-
+- 
 ## SSH
 - general syntax `ssh -Y username@graham.alliancecan.ca`
   - `-Y` allows to run graphical user interfaces
