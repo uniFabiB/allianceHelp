@@ -50,6 +50,17 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 
 ## File Management
 - Manual Copying to and from the server
+  - Method [sshfs](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh)
+    - mounts a local folder to the remote folder
+    - then you can use it with your prefered way of handling files (nautilus/dolphin/terminal/...)
+      - setup:
+        - make a local folder which you would like to use for this (say `~/grahamFolder/`)
+        - `sshfs username@graham.alliancecan.ca:/home/username/path/to/folder/which/it/should/be ~/grahamFolder/`
+    - I think this is the **most user friendly version** togehter with ide
+  - Method [IDE](<Visual Studio Code>)
+    - handle the files in the ide
+    - therefore you need to setup the ide, see [below](<Visual Studio Code>)
+    - I think this is also really **user friendly version** togehter with sshfs
   - Method [scp](https://www.geeksforgeeks.org/scp-command-in-linux-with-examples/)
     - simply copies the file
     - example
@@ -64,18 +75,7 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
       - `sftp username@graham.alliancecan.ca`
         - `put local/path/to/file.txt remote/path/to/filename.txt`
         - `...`
-    - once connected you can do multiple things at once &rarr; **a bit more user friendly**
-  - Method [sshfs](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh)
-    - mounts a local folder to the remote folder
-    - then you can use it with your prefered way of handling files (nautilus/dolphin/terminal/...)
-      - setup:
-        - make a local folder which you would like to use for this (say `~/grahamFolder/`)
-        - `sshfs username@graham.alliancecan.ca:/home/username/path/to/folder/which/it/should/be ~/grahamFolder/`
-    - I think this is the **most user friendly version** togehter with ide
-  - Method [IDE](<Visual Studio Code>)
-    - handle the files in the ide
-    - therefore you need to setup the ide, see [below](<Visual Studio Code>)
-    - I think this is also really **user friendly version** togehter with sshfs
+    - once connected you can do multiple things at once &rarr; **a bit more user friendly than scp**
 
 ## Visual Studio Code
 You do not have to use an IDE and can just modify the files with any editor, but I think it is really helpful.
@@ -144,4 +144,80 @@ And you can of course use your prefered IDE but in the following I will explain 
   - This should give you the option to clean, compile and run the program named `prog` or to just compile the program and run it
 - loading modules
   - For compilation we need to load the modules `fftw` and `netcdf`
-  - **to  do: finish**
+    - You can either add the following to the local `~/.ssh/config` file as in the example config file above
+      ```
+      RemoteCommand module load fftw-mpi/3.3.10 netcdf-fortran/4.6.1; bash  # load the modules at login so that they are available in vs code
+      RequestTTY yes                                                        # required for RemoteCommand to work
+      ```
+      - This will send `module load fftw-mpi/3.3.10 netcdf-fortran/4.6.1; bash` every time you ssh to the server via this profile
+    - Or include the following to the in the remote `~/.bashrc` file
+      `module load fftw-mpi/3.3.10 netcdf-fortran/4.6.1`
+      - The `~/.bashrc` file is executed every time you log on the server
+    - Loading the modules in this fashion we don't need to hard code module paths. So the new make file can look like this
+      ```
+      compiler = mpif90
+      progName = prog
+      OBJ = global_variables.o initialize.o data_ops.o fftwfunction.o function_ops.o optimization.o maxdLpdt.o
+      BASIC_LIB  = -lm -lmpi
+      DEB_OPTS = -g -O0
+      # -g enable debugging
+      # -O0 optimization off (for faster debugging)
+      EDI_OPTS = -ffree-line-length-512
+      # -ffree-line-length-512 otherwise line split error
+      # -fallow-argument-mismatch turns argument missmatch in mpi to warnings (not needed anymore since use mpi instead of include mpif.h)
+      OPTIONS = $(DEB_OPTS) $(EDI_OPTS)
+      FFTW_DIR      = -I$(EBROOTFFTWMPI)/include
+      FFTW_LIB      = -lfftw3_mpi -lfftw3 -lm		# Load FFTW3 Library
+      NETCDF_DIR    = -I$(EBROOTNETCDFMINFORTRAN)/include
+      NETCDF_LIB    = -lnetcdf -lnetcdff
+
+      $(progName): $(OBJ)
+        $(compiler) $(OPTIONS) $(OBJ) $(BASIC_LIB) $(NETCDF_LIB) $(FFTW_LIB) -o $@
+      %.o: %.f90
+        $(compiler) -c $(OPTIONS) $(NETCDF_DIR) $(FFTW_DIR) $<
+      clean:
+        rm -f *.o *.mod *.nc *.dat $(progName)
+      ```
+## Compiling on your mashine
+We need the following packages
+- for the fftw3 module
+  - fftw3-fortran
+    - `./configure --enable-mpi`
+    - `make`
+    - `sudo make install`
+  - fftw3-c (I don't think this was needed)
+    - `./configure --enable-mpi`
+    - `make`
+    - `sudo make install`
+- for the netcdf module
+  - [netcdf-fortran]((https://github.com/Unidata/netcdf-fortran/releases)), for which we need
+    - [netcdf-c](https://github.com/Unidata/netcdf-c/releases), for which we need
+      - [hdf5](https://www.hdfgroup.org/download-hdf5/source-code/)
+        - `configure`
+        - `make`
+        - `sudo make install`
+        - copy the files from `lib`, (`bin`, )`include` to `/usr/local/lib`, (`/usr/local/bin`, )`/usr/local/include` (I don't think we need bin)
+      - `ZDIR=/usr/local`
+      - `./configure --prefix=${ZDIR}`
+      - `make`
+      - `sudo make install`
+    - `./configure --prefix=${ZDIR}`
+    - `make`
+    - `sudo make install`
+
+Now all needed modules should be in `/usr/local/lib`, (`/usr/local/bin`, )`/usr/local/include` and the make file
+```
+compiler = mpif90
+progName = prog
+OBJ = global_variables.o initialize.o data_ops.o fftwfunction.o function_ops.o optimization.o maxdEdtHeli_main.o
+BASIC_LIB  = -lm -lmpi 
+LIB = -L /usr/local/lib -lfftw3_mpi -lfftw3 -lnetcdff -lnetcdf
+DIR = -I /usr/local/include
+$(progName): $(OBJ)
+  $(FC) -g $(OBJ) $(LIB) -o $@
+%.o: %.f90
+  $(FC) -c -g $(DIR) $(BASIC_LIB) -ffree-line-length-512 -fallow-argument-mismatch $<
+clean: 
+  rm -f *.o *~ *.mod
+```
+should work
