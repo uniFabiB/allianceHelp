@@ -80,6 +80,68 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 ## Visual Studio Code
 You do not have to use an IDE and can just modify the files with any editor, but I think it is really helpful.
 And you can of course use your prefered IDE but in the following I will explain [VS Code](https://code.visualstudio.com/)
-- [Here](https://www.youtube.com/watch?v=aR2L-UVmNXA) is a introduction to VS Code and how to use it on the cluster. Follow the basic setup of the video.
-- We need fftw
-- Compile and **to do: finish**
+- [Here](https://www.youtube.com/watch?v=aR2L-UVmNXA) is a introduction to VS Code and how to use it on the cluster. Follow the basic setup of the video so that you can connect in vscode to the cluster.
+- You might want to install the [Fortran Extension](https://marketplace.visualstudio.com/items?itemName=fortran-lang.linter-gfortran)
+- To Compile and Launch the code we need to specify how VS Code should do that
+  - In the remote project directory create a directory `.vscode`
+    - In this directory create the following files
+      - `tasks.json` which should look like this
+        ```
+          {
+            "version": "2.0.0",
+            "tasks": [
+              {
+                "type": "shell",
+                "label": "make",
+                "command": "make"
+              },
+              {
+                "type": "shell",
+                "label": "clean",
+                "command": "make clean"
+              },
+              {
+                "label": "fastBuild",
+                "dependsOn": ["make"]
+              },
+              {
+                "label": "cleanBuild",
+                "dependsOrder": "sequence",
+                "dependsOn": ["clean", "make"]
+              }
+            ]
+          }
+        ```
+      - `launch.json` which should look like this
+        ```
+          {
+            "version": "0.0.0",
+            "configurations": [
+              {
+                "name": "Debug (fast)",
+                "type": "cppdbg",
+                "request": "launch",
+                "preLaunchTask": "fastBuild",
+                "program": "${workspaceFolder}/prog",
+                "cwd":     "${workspaceFolder}",
+                "args": [],
+                "environment": [],
+              },
+              {
+                "name": "Debug (clean)",
+                "type": "cppdbg",
+                "request": "launch",
+                "preLaunchTask": "cleanBuild",
+                "program": "${workspaceFolder}/prog",
+                "cwd":     "${workspaceFolder}",
+                "args": [],
+                "environment": [],
+              }
+            ]
+          }
+
+        ```
+  - This should give you the option to clean, compile and run the program named `prog` or to just compile the program and run it
+- loading modules
+  - For compilation we need to load the modules `fftw` and `netcdf`
+  - **to  do: finish**
