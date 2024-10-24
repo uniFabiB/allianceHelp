@@ -10,6 +10,10 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 
 
 ## Useful Information
+- Resources for this
+  - [Sharcnet Wiki](https://helpwiki.sharcnet.ca/wiki/FAQ)
+    - especially their [online seminars](https://helpwiki.sharcnet.ca/wiki/Online_Seminars)
+  - [Alliance Wiki](https://docs.alliancecan.ca/wiki/Technical_documentation) 
 - 2FA can be simplified (see [SSH Help](#SSH))
 - Debugging with few Resources on Login Nodes is fine
   - Narval doesn't have cpu or time limit for login nodes
@@ -18,7 +22,6 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     - `module load ddt-cpu`
     - `ddt program`
       - can also run just `ddt` and then use the gui
-- Resources for this can be found on the [sharcnet wiki online seminar page](https://helpwiki.sharcnet.ca/wiki/Online_Seminars)
 
 ## SSH
 - general syntax `ssh -Y username@graham.alliancecan.ca`
