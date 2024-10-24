@@ -3,9 +3,9 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 
 ## Content
 - [Useful Information](<#useful-information>)
-- [SSH Help](#SSH)
-- [File Managment Help](<#file-management>)
-- [Visual Studio Code (IDE) Help](<#visual-studio-code>)
+- [SSH](#SSH)
+- [File Managment](<#file-management>)
+- [Visual Studio Code (IDE)](<#visual-studio-code>)
 - [Compiling Locally](<#compiling-locally>)
 
 
