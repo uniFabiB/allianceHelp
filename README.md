@@ -1,9 +1,7 @@
 # Help for Using the Alliance Clusters
 Help for debugging/ssh/development on the Digital Research Alliance of Canada Clusters
-## Resources and Source for this
-- https://helpwiki.sharcnet.ca/wiki/Online_Seminars
 
-## Useful Information
+## Overview
 - Debugging with few Resources on Login Nodes is fine &rarr; Debug/Develop on Login Nodes
   - Narval doesn't have cpu or time limit for login nodes
 - [DDT](https://www.youtube.com/watch?v=t5eNtewYgJw) can be used to parallal debug
@@ -11,6 +9,11 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     - `module load ddt-cpu`
     - `ddt program`
       - can also run just `ddt` and then use the gui
+- [https://helpwiki.sharcnet.ca/wiki/Online_Seminars](Resources for this)
+- [SSH Help](#SSH)
+- [File Managment Help](<File Management>)
+- [Visual Studio Code (IDE) Help](<Visual Studio Code>)
+- [Compiling Locally](<Compiling Locally>)
 
 ## SSH
 - general syntax `ssh -Y username@graham.alliancecan.ca`
@@ -178,7 +181,7 @@ And you can of course use your prefered IDE but in the following I will explain 
       clean:
         rm -f *.o *.mod *.nc *.dat $(progName)
       ```
-## Compiling on your mashine
+## Compiling locally
 We need the following packages
 - for the [fftw3](http://www.fftw.org/fftw2_doc/fftw_6.html) module
   - fftw3-fortran
