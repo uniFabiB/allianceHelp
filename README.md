@@ -180,7 +180,7 @@ And you can of course use your prefered IDE but in the following I will explain 
       ```
 ## Compiling on your mashine
 We need the following packages
-- for the fftw3 module
+- for the [fftw3](http://www.fftw.org/fftw2_doc/fftw_6.html) module
   - fftw3-fortran
     - `./configure --enable-mpi`
     - `make`
