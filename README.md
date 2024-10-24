@@ -9,7 +9,8 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     - `module load ddt-cpu`
     - `ddt program`
       - can also run just `ddt` and then use the gui
-- [https://helpwiki.sharcnet.ca/wiki/Online_Seminars](Resources for this)
+- Resources for this can be found [here](https://helpwiki.sharcnet.ca/wiki/Online_Seminars)
+## Content
 - [SSH Help](#SSH)
 - [File Managment Help](<#file-management>)
 - [Visual Studio Code (IDE) Help](<#visual-studio-code>)
