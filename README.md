@@ -39,7 +39,7 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 
       Host vscode_graham                                                      # the connection to use for graham when accessing via vs code
 	      Hostname graham.alliancecan.ca
-	      RemoteCommand module load fftw-mpi/3.3.10 netcdf-fortran/4.6.1; bash  # load the modules at login so that they are available in vs code
+	      RemoteCommand echo "loading modules ..."; module load fftw-mpi netcdf-fortran; bash # load the modules at login so that they are available in vs code
 	      RequestTTY yes                                                        # required for RemoteCommand to work
 	      ControlPath ~/.ssh/cm_vscode-%r@%h:%p
 	      ControlMaster auto
@@ -91,8 +91,8 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 ## Visual Studio Code
 You do not have to use an IDE and can just modify the files with any editor, but I think it is really helpful.
 And you can of course use your prefered IDE but in the following I will explain [VS Code](https://code.visualstudio.com/)
-- [Here](https://www.youtube.com/watch?v=aR2L-UVmNXA) is a introduction to VS Code and how to use it on the cluster. Follow the basic setup of the video so that you can connect in vscode to the cluster.
-- You might want to install the [Fortran Extension](https://marketplace.visualstudio.com/items?itemName=fortran-lang.linter-gfortran)
+- [Here](https://www.youtube.com/watch?v=u9k6HikDyqk) is a introduction to VS Code and how to use it on the cluster. Follow the basic setup of the video so that you can connect in vscode to the cluster
+  - We also want the [Fortran Extension](https://marketplace.visualstudio.com/items?itemName=fortran-lang.linter-gfortran)
 - To Compile and Launch the code we need to specify how VS Code should do that
   - In the remote project directory create a directory `.vscode`
     - In this directory create the following files
