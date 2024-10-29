@@ -90,7 +90,8 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 
 ## Visual Studio Code
 You do not have to use an IDE and can just modify the files with any editor, but I think it is really helpful.
-And you can of course use your prefered IDE but in the following I will explain [VS Code](https://code.visualstudio.com/)
+And you can of course use your prefered IDE but in the following I will explain [VS Code](https://code.visualstudio.com/).
+- **It seems like you can not use the Debugger in MPI in VSCode**
 - [Here](https://www.youtube.com/watch?v=u9k6HikDyqk) is a introduction to VS Code and how to use it on the cluster. Follow the basic setup of the video so that you can connect in vscode to the cluster
   - We also want the [Fortran Extension](https://marketplace.visualstudio.com/items?itemName=fortran-lang.linter-gfortran)
 - To Compile and Launch the code we need to specify how VS Code should do that
