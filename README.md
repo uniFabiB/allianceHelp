@@ -68,6 +68,7 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
         - make a local folder which you would like to use for this (say `~/grahamFolder/`)
         - `sshfs username@graham.alliancecan.ca:/home/username/path/to/folder/which/it/should/be ~/grahamFolder/`
     - I think this is the **most user friendly version** togehter with ide
+    - If there is an error or the connection broke down `pkill -kill -f "sshfs"`
   - Method [IDE](<#visual-studio-code>)
     - handle the files in the ide
     - therefore you need to setup the ide, see [below](<#visual-studio-code>)
