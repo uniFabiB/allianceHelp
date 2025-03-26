@@ -23,6 +23,43 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     - `ddt program`
       - can also run just `ddt` and then use the gui
 
+## slurm
+- Interactive Job
+  - `salloc --time=0-1:00 --mem-per-cpu=4G --ntasks=32 --account=rrg-bprotas`
+    - 1 hour interactive job
+  - `mpiexec -n 32 prog` or something similar
+  - If the connection is lost
+    - `squeue -u $(whoami)`
+    - `sattach 12345678.interactive`
+- Submit Job
+  - `ssh` and `cd` to location
+  - `sbatch run_graham.sh`
+    - where `run_graham.sh` is
+      ```
+      #!/bin/bash
+      #SBATCH --account=rrg-bprotas
+      #SBATCH --nodes=1
+      #SBATCH --ntasks-per-node=32
+      #SBATCH --mem=125000M
+      #SBATCH --time=1:00:00
+      srun prog
+      ```
+      - `srun` instead of `mpiexec`
+      - `srun` automatically figures out the nodes/cpus
+- commands
+  - `squeue -u $(whoami)`
+    - shows my jobs in the job queue
+  - `sacct`
+    - shows my previous jobs
+  - `scontrol show job 12345678`
+    - shows job details
+  - previously/other mentioned
+    - `sbatch run_graham.sh`
+    - `sattach 12345678.interactive`
+    - `scancel 12345678`
+    - `srun --jobid 12345678 --pty /bin/bash`
+    
+
 ## SSH
 - general syntax `ssh -Y username@graham.alliancecan.ca`
   - `-Y` allows to run graphical user interfaces
@@ -67,6 +104,8 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
       - setup:
         - make a local folder which you would like to use for this (say `~/grahamFolder/`)
         - `sshfs username@graham.alliancecan.ca:/home/username/path/to/folder/which/it/should/be ~/grahamFolder/`
+      - terminal copy files to local example
+        - `find ./output/ -type f -name 'diagScalar*.nc' -exec rsync -h --progress '{}' ~/Desktop/temp/`
     - I think this is the **most user friendly version** togehter with ide
     - If there is an error or the connection broke down `pkill -kill -f "sshfs"`
   - Method [IDE](<#visual-studio-code>)
