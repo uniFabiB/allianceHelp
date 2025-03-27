@@ -53,6 +53,8 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     - shows my previous jobs
   - `scontrol show job 12345678`
     - shows job details
+  - `seff 12345678`
+    - shows efficiency of the job
   - previously/other mentioned
     - `sbatch run_graham.sh`
     - `sattach 12345678.interactive`
@@ -134,6 +136,17 @@ And you can of course use your prefered IDE but in the following I will explain 
 - **It seems like you can not use the Debugger in MPI in VSCode**
 - [Here](https://www.youtube.com/watch?v=u9k6HikDyqk) is a introduction to VS Code and how to use it on the cluster. Follow the basic setup of the video so that you can connect in vscode to the cluster
   - We also want the [Fortran Extension](https://marketplace.visualstudio.com/items?itemName=fortran-lang.linter-gfortran)
+    - On graham there is a problem with installing fortls which is needed in order for it to work
+      - [use fortran-language-server instead](https://stackoverflow.com/a/74490227)
+        - potentially create a new virtual environment
+          - `virtualenv --no-download envName`
+        - install fortran-language-server
+          - `pip3 install fortran-language-server`
+        - [source/export path (with fortran-language-server instead of fortls)](https://fortran-lang.discourse.group/t/fortls-installation-autocomplete-suggestions/4308/4)
+          - chanage `~/.ssh/config`
+          - `RemoteCommand echo "loading modules, exporting my venv path ..."; module load fftw-mpi netcdf-fortran; source myVSCodeEnv/bin/activate; bash`
+        - reconnect ssh/restart vsCode
+        - should work now
 - To Compile and Launch the code we need to specify how VS Code should do that
   - In the remote project directory create a directory `.vscode`
     - In this directory create the following files
