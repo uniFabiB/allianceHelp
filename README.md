@@ -144,7 +144,7 @@ And you can of course use your prefered IDE but in the following I will explain 
           - `pip3 install fortran-language-server`
         - [source/export path (with fortran-language-server instead of fortls)](https://fortran-lang.discourse.group/t/fortls-installation-autocomplete-suggestions/4308/4)
           - chanage `~/.ssh/config`
-          - `RemoteCommand echo "loading modules, exporting my venv path ..."; module load fftw-mpi netcdf-fortran; source myVSCodeEnv/bin/activate; bash`
+          - `RemoteCommand echo "loading modules, exporting my venv path ..."; module load fftw-mpi netcdf-fortran; source envName/bin/activate; bash`
         - reconnect ssh/restart vsCode
         - should work now
 - To Compile and Launch the code we need to specify how VS Code should do that
