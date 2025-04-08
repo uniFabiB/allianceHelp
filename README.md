@@ -137,7 +137,7 @@ And you can of course use your prefered IDE but in the following I will explain 
 - [Here](https://www.youtube.com/watch?v=u9k6HikDyqk) is a introduction to VS Code and how to use it on the cluster. Follow the basic setup of the video so that you can connect in vscode to the cluster
   - We also want the [Fortran Extension](https://marketplace.visualstudio.com/items?itemName=fortran-lang.linter-gfortran)
     - On graham there is a problem with installing fortls which is needed in order for it to work
-      - [use fortran-language-server instead](https://stackoverflow.com/a/74490227)
+      - [use fortran-language-server instead](https://stackoverflow.com/a/74490227) (following the [python install instructions](https://docs.alliancecan.ca/wiki/Python/en#Creating_and_using_a_virtual_environment))
         - potentially create a new virtual environment
           - `virtualenv --no-download envName`
         - install fortran-language-server
