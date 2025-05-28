@@ -133,6 +133,9 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 ## Visual Studio Code
 You do not have to use an IDE and can just modify the files with any editor, but I think it is really helpful.
 And you can of course use your prefered IDE but in the following I will explain [VS Code](https://code.visualstudio.com/).
+- **Graham and Niagara are too outdated for vscode** -> downgrade to a previous version (version 1.98 (Feb 2025) seems to work) of vscode
+  - Download the [previous version](https://update.code.visualstudio.com/1.98.2/linux-deb-x64/stable)
+  - Install `sudo dpkg -i code_1.98.2-1741788907_amd64.deb`
 - **It seems like you can not use the Debugger in MPI in VSCode**
 - [Here](https://www.youtube.com/watch?v=u9k6HikDyqk) is a introduction to VS Code and how to use it on the cluster. Follow the basic setup of the video so that you can connect in vscode to the cluster
   - We also want the [Fortran Extension](https://marketplace.visualstudio.com/items?itemName=fortran-lang.linter-gfortran)
