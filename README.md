@@ -130,6 +130,25 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
         - `...`
     - once connected you can do multiple things at once &rarr; **a bit more user friendly than scp**
 
+## Remote Paraview
+- tigervnc (easier)
+  - [source a](https://docs.alliancecan.ca/wiki/ParaView#Remote_VNC_desktop_on_Graham_VDI_nodes)
+  - install tigervnc locally
+    `sudo snap install tigervnc`
+  - start tigervnc locally
+  - connect to vdi nodes
+    `gra-vdi.alliancecan.ca`
+  - enter research alliance credentials + 2fa
+  - load required modules on remote (not sure which ones are necessary)
+    `module load CcEnv`
+    (`module spider paraview`)
+    `module load StdEnv/2020  gcc/9.3.0  openmpi/4.0.3`
+    `module load paraview/5.13.1`
+  - run paraview on remote
+    `paraview`
+- connect local paraview to server (harder)
+  [see this](https://docs.alliancecan.ca/wiki/ParaView#Client-server_visualization)
+
 ## Visual Studio Code
 You do not have to use an IDE and can just modify the files with any editor, but I think it is really helpful.
 And you can of course use your prefered IDE but in the following I will explain [VS Code](https://code.visualstudio.com/).
