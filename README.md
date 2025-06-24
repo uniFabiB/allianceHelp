@@ -147,7 +147,7 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     
     (`module spider paraview`)
     
-    `module load StdEnv/2020  gcc/9.3.0  openmpi/4.0.3`
+    `module load StdEnv/2023  gcc/12.3  openmpi/4.1.5`
     
     `module load paraview/5.13.1`
     
