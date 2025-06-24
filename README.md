@@ -132,7 +132,7 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 
 ## Remote Paraview
 - tigervnc (easier)
-  - [source a](https://docs.alliancecan.ca/wiki/ParaView#Remote_VNC_desktop_on_Graham_VDI_nodes)
+  - [documentation](https://docs.alliancecan.ca/wiki/ParaView#Remote_VNC_desktop_on_Graham_VDI_nodes)
   - install tigervnc locally
     
     `sudo snap install tigervnc`
@@ -155,7 +155,7 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     
     `paraview`
 - connect local paraview to server (harder)
-  [see this](https://docs.alliancecan.ca/wiki/ParaView#Client-server_visualization)
+  [documentation](https://docs.alliancecan.ca/wiki/ParaView#Client-server_visualization)
 
 ## Visual Studio Code
 You do not have to use an IDE and can just modify the files with any editor, but I think it is really helpful.
