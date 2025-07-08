@@ -132,8 +132,8 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     - once connected you can do multiple things at once &rarr; **a bit more user friendly than scp**
 
 ## Remote Paraview
-- tigervnc (easier)
-  - on graham
+- tigervnc (fast)
+  - on graham (easier)
     - [documentation](https://docs.alliancecan.ca/wiki/ParaView#Remote_VNC_desktop_on_Graham_VDI_nodes)
     - install tigervnc locally
     
@@ -156,9 +156,32 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     - run paraview on remote
     
       `paraview`
-  - on cedar
+  - on cedar (less trivial but doable)
     - [documentation for compute nodes](https://docs.alliancecan.ca/wiki/VNC#Compute_nodes)
-  - connect local paraview to server (harder)
+    - connect to cluster
+      
+      `salloc --time=1:00:00 --cpus-per-task=4 --mem=16000`
+      
+      `export XDG_RUNTIME_DIR=${SLURM_TMPDIR}`
+      
+      `vncserver`
+      
+      `cat /home/fabianbl/.vnc/cdr1018.int.cedar.computecanada.ca\:1.log`
+      
+        check port (in example 5901)
+    - new connection with -L
+      
+      `ssh cedar -L 5902:cdr1018:5901`
+      
+        note portNew:cdrXYZA:portFromLog
+
+        keep this running
+      
+    - new local
+      
+      `vncviewer localhost:5902`
+      
+  - connect local paraview to server (slow and not trivial)
   [documentation](https://docs.alliancecan.ca/wiki/ParaView#Client-server_visualization)
 
 ## Visual Studio Code
