@@ -3,8 +3,9 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 
 ## Content
 - [Useful Information](<#useful-information>)
-- [SSH](#SSH)
+- [SSH](#ssh)
 - [File Managment](<#file-management>)
+- [Remote Paraview](<#remote-paraview>)
 - [Visual Studio Code (IDE)](<#visual-studio-code>)
 - [Compiling Locally](<#compiling-locally>)
 
