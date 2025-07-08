@@ -181,6 +181,12 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
       
       `vncviewer localhost:5902`
       
+        `module load StdEnv/2023  gcc/12.3  openmpi/4.1.5`
+    
+        `module load paraview/5.13.1`
+    
+        `paraview`
+      
   - connect local paraview to server (slow and not trivial)
   [documentation](https://docs.alliancecan.ca/wiki/ParaView#Client-server_visualization)
 
