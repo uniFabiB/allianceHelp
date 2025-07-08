@@ -133,29 +133,32 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 
 ## Remote Paraview
 - tigervnc (easier)
-  - [documentation](https://docs.alliancecan.ca/wiki/ParaView#Remote_VNC_desktop_on_Graham_VDI_nodes)
-  - install tigervnc locally
+  - on graham
+    - [documentation](https://docs.alliancecan.ca/wiki/ParaView#Remote_VNC_desktop_on_Graham_VDI_nodes)
+    - install tigervnc locally
     
-    `sudo snap install tigervnc`
-  - start tigervnc locally
-  - connect to vdi nodes
+      `sudo snap install tigervnc`
+    - start tigervnc locally
+    - connect to vdi nodes
     
-    `gra-vdi.alliancecan.ca`
-  - enter research alliance credentials + 2fa
-  - load required modules on remote (not sure which ones are necessary)
+      `gra-vdi.alliancecan.ca`
+    - enter research alliance credentials + 2fa
+    - load required modules on remote (not sure which ones are necessary)
     
-    `module load CcEnv`
+      `module load CcEnv`
     
-    (`module spider paraview`)
+      (`module spider paraview`)
     
-    `module load StdEnv/2023  gcc/12.3  openmpi/4.1.5`
+      `module load StdEnv/2023  gcc/12.3  openmpi/4.1.5`
     
-    `module load paraview/5.13.1`
+      `module load paraview/5.13.1`
     
-  - run paraview on remote
+    - run paraview on remote
     
-    `paraview`
-- connect local paraview to server (harder)
+      `paraview`
+  - on cedar
+    - [documentation for compute nodes](https://docs.alliancecan.ca/wiki/VNC#Compute_nodes)
+  - connect local paraview to server (harder)
   [documentation](https://docs.alliancecan.ca/wiki/ParaView#Client-server_visualization)
 
 ## Visual Studio Code
