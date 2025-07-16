@@ -171,7 +171,7 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
         check port (in example 5901)
     - new connection with -L
       
-      `ssh cedar -L 5902:cdr1018:5901`
+      `ssh cedar -L 5902:cdr1000:5901`
       
         note portNew:cdrXYZA:portFromLog
 
