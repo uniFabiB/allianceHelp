@@ -166,7 +166,7 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
       
       `vncserver`
       
-      `cat /home/fabianbl/.vnc/cdr1018.int.cedar.computecanada.ca\:1.log`
+      `cat /home/fabianbl/.vnc/cdr1000.int.cedar.computecanada.ca\:1.log | grep " port "`
       
         check port (in example 5901)
     - new connection with -L
