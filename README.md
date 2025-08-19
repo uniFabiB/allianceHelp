@@ -141,7 +141,8 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     - Interactive Apps -> Nibi Desktop -> ...
     - `module load StdEnv/2023  gcc/12.3  openmpi/4.1.5 paraview/5.13.1`
     - `paraview`
-- tigervnc (fast)
+- tigervnc as program
+  - fast 
   - on graham (easier)
     - [documentation](https://docs.alliancecan.ca/wiki/ParaView#Remote_VNC_desktop_on_Graham_VDI_nodes)
     - install tigervnc locally
