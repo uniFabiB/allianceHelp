@@ -132,6 +132,15 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     - once connected you can do multiple things at once &rarr; **a bit more user friendly than scp**
 
 ## Remote Paraview
+- tigervnc in browser
+  - fast/easiest
+  - nibi only
+  - some shortcuts not working since in browser
+  - instructions
+    - log in to https://ondemand.sharcnet.ca/
+    - Interactive Apps -> Nibi Desktop -> ...
+    - `module load StdEnv/2023  gcc/12.3  openmpi/4.1.5 paraview/5.13.1`
+    - `paraview`
 - tigervnc (fast)
   - on graham (easier)
     - [documentation](https://docs.alliancecan.ca/wiki/ParaView#Remote_VNC_desktop_on_Graham_VDI_nodes)
@@ -146,8 +155,6 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     - load required modules on remote (not sure which ones are necessary)
     
       `module load CcEnv`
-    
-      (`module spider paraview`)
     
       `module load StdEnv/2023  gcc/12.3  openmpi/4.1.5`
     
