@@ -139,8 +139,9 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
   - instructions
     - log in to https://ondemand.sharcnet.ca/
     - Interactive Apps -> Nibi Desktop -> ...
-    - `module load StdEnv/2023  gcc/12.3  openmpi/4.1.5 paraview/5.13.1`
-    - `paraview`
+      - terminal 
+        - `module load StdEnv/2023  gcc/12.3  openmpi/4.1.5 paraview/5.13.1`
+        - `paraview`
 - tigervnc as program
   - fast 
   - on graham (easier)
