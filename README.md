@@ -326,8 +326,12 @@ And you can of course use your prefered IDE but in the following I will explain 
   - `mcc -m -R -nodisplay myProgram.m`
 - copy only binary (`myProgram` here) to server
 - salloc to an interactive session
-- `module load mcr/R2024b`
-- `run_mcr_binary.sh myProgram`
+  - load the mcr version the program was compiled with
+    - `module load mcr/R2024b`
+  - set path (only needs to be done once for program)
+    - `setrpaths.sh --path myProgram`
+  - run program
+    - `run_mcr_binary.sh myProgram`
  
 
 
