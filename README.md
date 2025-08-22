@@ -7,6 +7,7 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 - [File Managment](<#file-management>)
 - [Remote Paraview](<#remote-paraview>)
 - [Visual Studio Code (IDE)](<#visual-studio-code>)
+- [Running Remote Matlab Code](<#running-remote-matlab-code>)
 - [Compiling Locally](<#compiling-locally>)
 
 
@@ -316,6 +317,20 @@ And you can of course use your prefered IDE but in the following I will explain 
       clean:
         rm -f *.o *.mod *.nc *.dat $(progName)
       ```
+
+
+## Running Remote Matlab Code
+- install Matlab Application Compile Extension in Matlab extensions
+- do the development/testing on personal machine
+- compile code to binary
+  - 'mcc -m -R -nodisplay myProgram.m'
+- copy only binary (myProgram in this example) to server
+- salloc to an interactive session
+- 'module load mcr/R2024b'
+- 'run_mcr_binary.sh myProgram'
+ 
+
+
 ## Compiling locally
 We need the following packages
 - for the [fftw3](http://www.fftw.org/fftw2_doc/fftw_6.html) module
