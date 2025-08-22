@@ -323,11 +323,11 @@ And you can of course use your prefered IDE but in the following I will explain 
 - install Matlab Application Compile Extension in Matlab extensions
 - do the development/testing on personal machine
 - compile code to binary
-  - 'mcc -m -R -nodisplay myProgram.m'
-- copy only binary (myProgram in this example) to server
+  - `mcc -m -R -nodisplay myProgram.m`
+- copy only binary (`myProgram` here) to server
 - salloc to an interactive session
-- 'module load mcr/R2024b'
-- 'run_mcr_binary.sh myProgram'
+- `module load mcr/R2024b`
+- `run_mcr_binary.sh myProgram`
  
 
 
