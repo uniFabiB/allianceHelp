@@ -322,7 +322,7 @@ And you can of course use your prefered IDE but in the following I will explain 
 ## Running Remote Matlab Code
 - install Matlab Application Compile Extension in Matlab extensions
 - do the development/testing on personal machine
-- compile code to binary
+- in Matlab terminal compile the code to binary
   - `mcc -m -R -nodisplay myProgram.m`
 - copy only binary (`myProgram` here) to server
 - salloc to an interactive session
