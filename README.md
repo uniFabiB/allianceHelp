@@ -64,6 +64,11 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     - `sattach 12345678.interactive`
     - `scancel 12345678`
     - `srun --jobid 12345678 --pty /bin/bash`
+  - disk usage
+    - `du -h -d 2 .`
+      - disk usage of current directory, depth = 2, human readable size units
+    - `diskusage_report`
+      - user and work group usage
     
 
 ## SSH
