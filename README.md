@@ -57,6 +57,8 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
     - shows job details
   - `seff 12345678`
     - shows efficiency of the job
+  - `sshare -l -A rrg-bprotas_cpu`
+  	- show my ussage share of rrg-bprotas_cpu
   - previously/other mentioned
     - `sbatch run_graham.sh`
     - `sattach 12345678.interactive`
