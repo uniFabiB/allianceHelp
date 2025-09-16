@@ -18,7 +18,7 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
   - [Alliance Wiki](https://docs.alliancecan.ca/wiki/Technical_documentation) 
 - 2FA can be simplified (see [SSH Help](#SSH))
 - [nibi portal](https://portal.nibi.sharcnet.ca)
-- [nibi usage](https://metrics.nibi.sharcnet.ca/)
+- [nibi metrics](https://metrics.nibi.sharcnet.ca/)
 - Debugging with few Resources on Login Nodes is fine
   - Narval doesn't have cpu or time limit for login nodes
 - [DDT](https://www.youtube.com/watch?v=t5eNtewYgJw) can be used to parallal debug
