@@ -19,6 +19,7 @@ Help for debugging/ssh/development on the Digital Research Alliance of Canada Cl
 - 2FA can be simplified (see [SSH Help](#SSH))
 - [nibi portal](https://portal.nibi.sharcnet.ca)
 - [nibi metrics](https://metrics.nibi.sharcnet.ca/)
+- [alliance portal](https://portal.alliancecan.ca)
 - nibi big memory nodes treshhold about 2 tasks, 14GB mem-per-cpu
 - Debugging with few Resources on Login Nodes is fine
   - Narval doesn't have cpu or time limit for login nodes
