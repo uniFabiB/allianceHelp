@@ -330,6 +330,8 @@ And you can of course use your prefered IDE but in the following I will explain 
       ```
 
 ## Matlab
+### Standard shortcuts
+- Preferences -> MATLAB -> Keyboard -> Shortcuts -> Active settings -> Windows Default Set
 ### Running Live Matlab
 - probably easiest via x11
   - ssh to node with x11
