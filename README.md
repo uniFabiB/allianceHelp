@@ -329,8 +329,13 @@ And you can of course use your prefered IDE but in the following I will explain 
         rm -f *.o *.mod *.nc *.dat $(progName)
       ```
 
-
-## Running Remote Matlab Code
+## Matlab
+# Running Live Matlab
+- probably easiest via x11
+- ssh to node with x11
+- `module load matlab`
+- `matlab`
+# Running Remote Matlab Code
 - install Matlab Application Compile Extension in Matlab extensions
 - do the development/testing on personal machine
 - in Matlab terminal compile the code to binary
